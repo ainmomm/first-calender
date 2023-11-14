@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.calendar-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.calendar-header {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-month-year {
+    font-size: 1.5em;
+}
+
+.controls button,
+.today-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px 10px;
+}
+
+.month-picker {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendar thead {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.calendar th {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.calendar td {
+    border-bottom: 1px solid #ddd;
+    line-height: 20px; /* 높이 설정 */
+    width: 40px; /* 셀의 너비 */
+    height: 40px; /* 셀의 높이 */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.calendar td:not(.other-month) {
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar td:not(.other-month):hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Style for days not in the current month */
+.other-month {
+    color: #aaa; /* Lighter text color */
+    opacity: 0.5; /* Half transparent */
+}
+
+.calendar td span {
+    display: inline-block; /* 인라인 블록 요소로 변경 */
+    width: 20px; /* 너비 */
+    height: 20px; /* 높이 */
+    line-height: 20px; /* 세로 중앙 정렬을 위한 line-height */
+    padding: 5px; /* 여백 */
+    border-radius: 50%; /* 원 모양 */
+    text-align: center; /* 텍스트 가로 중앙 정렬 */
+}
+
+.calendar td span.today-highlight {
+    color: black;
+    background-color: #e695db4d;
+}
+
+
+
+/* Custom styles for events */
+.event {
+    display: block;
+    margin: 5px 0;
+    background: #007bff;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 768px) {
+    .calendar-header .current-month-year {
+        font-size: 1.2em;
+    }
+}
+
+/* Add more styles as needed */
